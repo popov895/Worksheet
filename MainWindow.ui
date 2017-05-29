@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/resources/icons/application.svg</normaloff>:/resources/icons/application.svg</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ContiguousSelection</enum>
+    </property>
+    <property name="verticalScrollMode">
+     <enum>QAbstractItemView::ScrollPerPixel</enum>
+    </property>
+    <property name="horizontalScrollMode">
+     <enum>QAbstractItemView::ScrollPerPixel</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="separator"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSaveAs"/>
+   <addaction name="separator"/>
+   <addaction name="actionInsertColumnsLeft"/>
+   <addaction name="actionInsertColumnsRight"/>
+   <addaction name="actionDeleteColumns"/>
+   <addaction name="separator"/>
+   <addaction name="actionInsertRowsAbove"/>
+   <addaction name="actionInsertRowsBelow"/>
+   <addaction name="actionDeleteRows"/>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/document-new.svg</normaloff>:/resources/icons/document-new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>Create new worksheet</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/document-open.svg</normaloff>:/resources/icons/document-open.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open an existing worksheet</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/document-save.svg</normaloff>:/resources/icons/document-save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save worksheet</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/document-save-as.svg</normaloff>:/resources/icons/document-save-as.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Save As</string>
+   </property>
+   <property name="toolTip">
+    <string>Save worksheet under a new name</string>
+   </property>
+  </action>
+  <action name="actionInsertColumnsLeft">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/edit-table-insert-columns-left.svg</normaloff>:/resources/icons/edit-table-insert-columns-left.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Insert Columns Left</string>
+   </property>
+   <property name="toolTip">
+    <string>Insert columns left</string>
+   </property>
+  </action>
+  <action name="actionInsertColumnsRight">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/edit-table-insert-columns-right.svg</normaloff>:/resources/icons/edit-table-insert-columns-right.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Insert Columns Right</string>
+   </property>
+   <property name="toolTip">
+    <string>Insert columns right</string>
+   </property>
+  </action>
+  <action name="actionDeleteColumns">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/edit-table-delete-columns.svg</normaloff>:/resources/icons/edit-table-delete-columns.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Columns</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete selected columns</string>
+   </property>
+  </action>
+  <action name="actionInsertRowsAbove">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/edit-table-insert-rows-above.svg</normaloff>:/resources/icons/edit-table-insert-rows-above.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Insert Rows Above</string>
+   </property>
+   <property name="toolTip">
+    <string>Insert rows above</string>
+   </property>
+  </action>
+  <action name="actionInsertRowsBelow">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/edit-table-insert-rows-below.svg</normaloff>:/resources/icons/edit-table-insert-rows-below.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Insert Rows Below</string>
+   </property>
+   <property name="toolTip">
+    <string>Insert rows below</string>
+   </property>
+  </action>
+  <action name="actionDeleteRows">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/resources/icons/edit-table-delete-rows.svg</normaloff>:/resources/icons/edit-table-delete-rows.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Rows</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete selected rows</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
