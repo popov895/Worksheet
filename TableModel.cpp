@@ -52,7 +52,7 @@ bool TableModel::insertColumns(int column, int count, const QModelIndex &parent)
         decltype(_m) m(_m.rows(), _m.cols() + count);
         m.leftCols(column) = _m.leftCols(column);
         m.rightCols(m.cols() - (column + count)) = _m.rightCols(_m.cols() - column);
-        _m = m;
+        _m.swap(m);
         endInsertColumns();
 
         return true;
@@ -70,7 +70,7 @@ bool TableModel::removeColumns(int column, int count, const QModelIndex &parent)
             decltype(_m) m(_m.rows(), _m.cols() - count);
             m.leftCols(column) = _m.leftCols(column);
             m.rightCols(m.cols() - column) = _m.rightCols(_m.cols() - (column + count));
-            _m = m;
+            _m.swap(m);
             endRemoveColumns();
 
             return true;
@@ -95,7 +95,7 @@ bool TableModel::insertRows(int row, int count, const QModelIndex &parent)
         decltype(_m) m(_m.rows() + count, _m.cols());
         m.topRows(row) = _m.topRows(row);
         m.bottomRows(m.rows() - (row + count)) = _m.bottomRows(_m.rows() - row);
-        _m = m;
+        _m.swap(m);
         endInsertRows();
 
         return true;
@@ -113,7 +113,7 @@ bool TableModel::removeRows(int row, int count, const QModelIndex &parent)
             decltype(_m) m(_m.rows() - count, _m.cols());
             m.topRows(row) = _m.topRows(row);
             m.bottomRows(m.rows() - row) = _m.bottomRows(_m.rows() - (row + count));
-            _m = m;
+            _m.swap(m);
             endRemoveRows();
 
             return true;
